@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <script
+      src="https://kit.fontawesome.com/7bfeb65ec9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="instructions">
+      <h3><u>Instructions</u></h3>
+      <ol>
+        <li>
+          Left click <i class="fas fa-mouse-pointer"></i> on a cell to reveal if
+          it contains a bomb <i class="fas fa-bomb"></i> or not.
+        </li>
+        <li>
+          You score a point for each cell, untill you click on a bomb
+          <i class="fas fa-bomb"></i>.
+        </li>
+        <li>There are 10 bombs in this 10x10 grid (100 cells).</li>
+        <li>
+          The number in the cell indicates how many bombs are there in adjacent
+          8 cells of that cell.<br />
+          <img src="img.jpg" height="300px" width="300px" />
+        </li>
+
+        <li>
+          If you successfully click all cells without stepping a bomb, You Win!!
+        </li>
+        <li>
+          If you click <i class="fas fa-mouse-pointer"></i> on a bomb, the game
+          ends and You Lose!!
+        </li>
+        <li>Try to score 90 points to win the Game.</li>
+      </ol>
+      <h4>All the best</h4>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-success"
+          onclick="disableInstructions()"
+        >
+          Play
+        </button>
+      </div>
+    </div>
+    <div id="header">
+      <div id="head">
+        <h1 id="heading">Play Minesweeper</h1>
+        <p style="margin: 0.2% 1%; font-weight: bolder;">
+          Score 90 points to win the Game.
+        </p>
+      </div>
+      <div id="score">Score: 0</div>
+      <div id="flagged">Flags: 0</div>
+    </div>
+    <div id="game-container" class="hide"></div>
+
+    <!-- Button trigger modal -->
+    <button
+      id="modalButton"
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#staticBackdrop"
+    >
+      Launch static backdrop modal
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-backdrop="static"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">
+              <div id="modalHead">Game Over</div>
+            </h5>
+          </div>
+          <div class="modal-body">
+            <div id="modalText">You lose!!</div>
+            <div id="scoreModal"></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="closeButton"
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="restartButton" type="button" class="btn btn-primary">
+              Restart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
